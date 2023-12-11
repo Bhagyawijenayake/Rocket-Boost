@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rb;
+    AudioSource audioSource;
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 2f;
 
@@ -12,6 +13,8 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,17 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+
+        }
+        else
+        {
+            audioSource.Stop();
         }
     }
 
@@ -43,8 +57,8 @@ public class Movement : MonoBehaviour
 
     private void ApplyRotation(float rotationThisFrame)
     {
-        rb.freezeRotation=true; //freezing rotation so we can manually rotate
-        transform.Rotate(Vector3.forward  * Time.deltaTime*rotationThisFrame);
-        rb.freezeRotation= false; //unfreezing rotation so physics system work
+        rb.freezeRotation = true; //freezing rotation so we can manually rotate
+        transform.Rotate(Vector3.forward * Time.deltaTime * rotationThisFrame);
+        rb.freezeRotation = false; //unfreezing rotation so physics system work
     }
 }

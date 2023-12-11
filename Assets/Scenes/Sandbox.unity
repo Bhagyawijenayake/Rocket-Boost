@@ -414,17 +414,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4196187375197442495, guid: cbf66f9dbfd28994eaa3df607f0ea2f1, type: 3}
-      propertyPath: m_Drag
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196187375197442495, guid: cbf66f9dbfd28994eaa3df607f0ea2f1, type: 3}
-      propertyPath: m_Constraints
-      value: 56
-      objectReference: {fileID: 0}
     - target: {fileID: 4632710995214335294, guid: cbf66f9dbfd28994eaa3df607f0ea2f1, type: 3}
       propertyPath: m_Name
       value: Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896034505222509978, guid: cbf66f9dbfd28994eaa3df607f0ea2f1, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
